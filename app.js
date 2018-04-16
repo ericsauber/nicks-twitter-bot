@@ -15,12 +15,7 @@ var text;
 Twitter.stream('statuses/filter', {follow: '942983036005691393'}, function(stream) {
   
   	stream.on('data', function(tweet) {
-    
-  		
-  		
 		wait(tweet);
-		
-
 	});
 
   stream.on('error', function(error) {
@@ -29,12 +24,9 @@ Twitter.stream('statuses/filter', {follow: '942983036005691393'}, function(strea
 
 });
 
-
 function replyTo(tweet) {
 	
-
 	var response = '';
-
 	response = getText();
 
 	text = '';
@@ -68,14 +60,12 @@ async function wait(tweet) {
   		msg.includes('thats so cool. jk tho')) {
   		
   	} else {
-
 		await sleep(randomNumber*1000);
   		replyTo(tweet);
   	}
 }
 
 function sleep(ms) {
-  	
   	return new Promise(resolve => setTimeout(resolve, ms));
 }
 
@@ -93,5 +83,3 @@ function getText() {
 
 	return replies[rand];
 }
-
-
